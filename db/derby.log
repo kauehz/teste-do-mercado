@@ -1,0 +1,31 @@
+Tue Mar 29 23:48:36 BRT 2016 : Apache Derby Servidor de Rede - 10.10.2.0 - (1582446) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+Tue Mar 29 23:48:37 BRT 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância a816c00e-0153-c56c-32d2-0000669bb12d
+no diretório de banco de dados F:\Estagio\teste-do-mercado\db\MercadoDB 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_31-b13
+user.dir=F:\glassfish-4.1\glassfish4\javadb
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=F:\Estagio\teste-do-mercado\db
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+----------------------------------------------------------------
+Tue Mar 29 23:49:03 BRT 2016:
+Encerrando a instância a816c00e-0153-c56c-32d2-0000669bb12d
+Tue Mar 29 23:49:03 BRT 2016 Thread[DRDAConnThread_3,5,main] (DATABASE = MercadoDB), (DRDAID = {2}), Banco de dados 'MercadoDB' fechado.
+----------------------------------------------------------------
+Tue Mar 29 23:52:17 BRT 2016:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instância 560740aa-0153-c56c-32d2-0000669bb12d
+no diretório de banco de dados F:\Estagio\teste-do-mercado\db\MercadoDB 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_31-b13
+user.dir=F:\glassfish-4.1\glassfish4\javadb
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=F:\Estagio\teste-do-mercado\db
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''
