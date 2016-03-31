@@ -16,6 +16,11 @@ public class TipoMercadoria implements Serializable {
     private int cod_TipoMercadoria;
     private String des_TipoMercadoria;
 
+    public TipoMercadoria() {
+        this.cod_TipoMercadoria = -1;
+        this.des_TipoMercadoria = null;
+    }
+
     public TipoMercadoria(int cod_TipoMercadoria, String des_TipoMercadoria) {
         this.cod_TipoMercadoria = cod_TipoMercadoria;
         this.des_TipoMercadoria = des_TipoMercadoria;

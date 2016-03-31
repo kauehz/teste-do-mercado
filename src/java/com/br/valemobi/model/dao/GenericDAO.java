@@ -5,11 +5,20 @@
  */
 package com.br.valemobi.model.dao;
 
+import java.util.List;
+
 /**
  *
  * @author Asu
  */
-public class GenericDAO<E> {
-    
-    
+public interface GenericDAO<E> {
+
+    public boolean insert(E e);
+
+    public List<E> read();
+
+    public boolean update(E e);
+
+    public boolean delete(E e);
+
 }

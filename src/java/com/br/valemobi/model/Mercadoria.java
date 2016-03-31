@@ -17,6 +17,14 @@ public class Mercadoria implements Serializable {
     private String nome_Mercadoria;
     private double preco;
 
+    public Mercadoria(){
+        this.cod_Mercadoria = -1;
+        this.nome_Mercadoria = null;
+        this.preco = 0.0;
+        this.cod_Negocio = -1;
+        this.cod_TipoMercadoria = -1;        
+    }
+        
     public Mercadoria(int cod_Mercadoria, int qtd, String nome_Mercadoria, double preco) {
         this.cod_Mercadoria = cod_Mercadoria;
         this.qtd = qtd;

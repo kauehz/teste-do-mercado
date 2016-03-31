@@ -14,11 +14,16 @@ import java.io.Serializable;
 public class Negocio implements Serializable{
     
     private int cod_Negocio;
-    private String des_TipoNegocio;
+    private String des_Negocio;
 
-    public Negocio(int cod_Negocio, String des_TipoNegocio) {
+    public Negocio() {
+        this.cod_Negocio = -1;
+        this.des_Negocio = null;
+    }
+    
+    public Negocio(int cod_Negocio, String des_Negocio) {
         this.cod_Negocio = cod_Negocio;
-        this.des_TipoNegocio = des_TipoNegocio;
+        this.des_Negocio = des_Negocio;
     }
 
     public int getCod_Negocio() {
@@ -29,12 +34,12 @@ public class Negocio implements Serializable{
         this.cod_Negocio = cod_Negocio;
     }
 
-    public String getDes_TipoNegocio() {
-        return des_TipoNegocio;
+    public String getDes_Negocio() {
+        return des_Negocio;
     }
 
-    public void setDes_TipoNegocio(String des_TipoNegocio) {
-        this.des_TipoNegocio = des_TipoNegocio;
+    public void setDes_Negocio(String des_Negocio) {
+        this.des_Negocio = des_Negocio;
     }
         
     
