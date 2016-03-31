@@ -58,7 +58,7 @@ public class TipoMercadoriaDAO implements GenericDAO<TipoMercadoria> {
     public List<TipoMercadoria> read() {
         List<TipoMercadoria> t = new ArrayList<>();
 
-        String sql = "SELECT * FROM Negocio";
+        String sql = "SELECT * FROM TipoMercadoria";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -68,6 +68,32 @@ public class TipoMercadoriaDAO implements GenericDAO<TipoMercadoria> {
                 TipoMercadoria tm = new TipoMercadoria();
                 tm.setCod_TipoMercadoria(rs.getInt("cod_TipoMercadoria"));
                 tm.setDes_TipoMercadoria(rs.getString("des_TipoMercadoria"));
+
+                t.add(tm);
+            }
+
+            ps.close();
+            rs.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(NegocioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return t;
+    }
+    
+    public List<TipoMercadoria> readDistinct() {
+        List<TipoMercadoria> t = new ArrayList<>();
+
+        String sql = "SELECT DISTINCT(des_tipomercadoria) FROM tipomercadoria";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                TipoMercadoria tm = new TipoMercadoria();
+                tm.setCod_TipoMercadoria(rs.getInt("cod_tipomercadoria"));
+                tm.setDes_TipoMercadoria(rs.getString("des_tipomercadoria"));
 
                 t.add(tm);
             }

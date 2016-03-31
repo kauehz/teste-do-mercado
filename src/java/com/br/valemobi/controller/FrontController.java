@@ -5,8 +5,14 @@
  */
 package com.br.valemobi.controller;
 
+import com.br.valemobi.model.Negocio;
+import com.br.valemobi.model.TipoMercadoria;
+import com.br.valemobi.model.dao.NegocioDAO;
+import com.br.valemobi.model.dao.TipoMercadoriaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +25,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
 public class FrontController extends HttpServlet {
+
+    private String command;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,17 +42,35 @@ public class FrontController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet FrontController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet FrontController at " + request.getContextPath() + "</h1>");
+
+            RequestDispatcher rd;
+            TipoMercadoriaDAO tmDAO = new TipoMercadoriaDAO();
+            NegocioDAO negocioDAO = new NegocioDAO();
+            List<TipoMercadoria> tm = tmDAO.read();
+            for (TipoMercadoria tm1 : tm) {
+                System.out.println(tm1.toString());
+            }
             
-            
-            out.println("</body>");
-            out.println("</html>");
+            request.getSession().setAttribute("ListaTm", tm);
+
+            rd = request.getRequestDispatcher("index.jsp");
+            rd.forward(request, response);
+
+            if (command.startsWith("tm")) {
+                //TipoMercadoriaDAO tmDAO = new TipoMercadoriaDAO();
+                //NegocioDAO negocioDAO = new NegocioDAO();
+
+                if (command.endsWith("insert")) {
+
+                    List<TipoMercadoria> tms = tmDAO.readDistinct();
+                    request.getSession().setAttribute("ListaTm", tm);
+
+                    rd = request.getRequestDispatcher("index.jsp");
+                    rd.forward(request, response);
+                }
+
+            }
+
         }
     }
 

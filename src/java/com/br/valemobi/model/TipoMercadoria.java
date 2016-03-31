@@ -41,6 +41,11 @@ public class TipoMercadoria implements Serializable {
     public void setDes_TipoMercadoria(String des_TipoMercadoria) {
         this.des_TipoMercadoria = des_TipoMercadoria;
     }
+
+    @Override
+    public String toString() {
+        return "TipoMercadoria{" + "cod_TipoMercadoria=" + cod_TipoMercadoria + ", des_TipoMercadoria=" + des_TipoMercadoria + '}';
+    }
     
     
     
